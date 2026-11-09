@@ -25,7 +25,11 @@ from langchain_core.documents import Document
 # 1. CONFIGURATION
 # =====================================================
 
-load_dotenv()
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent
+
+load_dotenv(BASE_DIR / ".env", override=True)
 
 API_KEY = os.getenv("OPENROUTER_API_KEY")
 
